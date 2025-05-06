@@ -1,6 +1,7 @@
 package com.coffee_glp.model.entities;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 public class Usuario {
@@ -9,16 +10,19 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(unique = true, nullable = false)
+    @NotNull
     private String username;
 
-    @Column(nullable = false)
+    @NotNull
     private String password;
 
-    @Column(nullable = false)
+    @NotNull
     private String role;
 
-    // Getters y setters
+    @NotNull
+    private String correo; // Nuevo campo
+
+    // Getters y Setters
     public Long getId() {
         return id;
     }
@@ -49,5 +53,13 @@ public class Usuario {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
     }
 }
