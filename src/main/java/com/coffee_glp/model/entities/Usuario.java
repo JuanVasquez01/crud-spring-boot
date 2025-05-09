@@ -1,65 +1,57 @@
 package com.coffee_glp.model.entities;
 
-import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
+    import jakarta.persistence.*;
 
-@Entity
-public class Usuario {
+    @Entity
+    public class Usuario {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        private Long id;
 
-    @NotNull
-    private String username;
+        private String username;
+        private String role;
+        private String correo;
+        private String password; // Campo para la contraseña
 
-    @NotNull
-    private String password;
+        // Getters y setters
+        public Long getId() {
+            return id;
+        }
 
-    @NotNull
-    private String role;
+        public void setId(Long id) {
+            this.id = id;
+        }
 
-    @NotNull
-    private String correo; // Nuevo campo
+        public String getUsername() {
+            return username;
+        }
 
-    // Getters y Setters
-    public Long getId() {
-        return id;
+        public void setUsername(String username) {
+            this.username = username;
+        }
+
+        public String getRole() {
+            return role;
+        }
+
+        public void setRole(String role) {
+            this.role = role;
+        }
+
+        public String getCorreo() {
+            return correo;
+        }
+
+        public void setCorreo(String correo) {
+            this.correo = correo;
+        }
+
+        public String getPassword() {
+            return password;
+        }
+
+        public void setPassword(String password) {
+            this.password = password;
+        }
     }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
-    }
-
-    public String getCorreo() {
-        return correo;
-    }
-
-    public void setCorreo(String correo) {
-        this.correo = correo;
-    }
-}
