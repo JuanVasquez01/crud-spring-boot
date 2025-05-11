@@ -4,7 +4,9 @@ import jakarta.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "curvas_tostado")
+@Table(name = "curvas_tostado", indexes = {
+    @Index(name = "idx_curva_tostado_ciclo_id", columnList = "ciclo_id")
+})
 public class CurvaTostado {
 
     @Id
